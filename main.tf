@@ -41,7 +41,7 @@ resource "google_project_iam_member" "atlantis_admin" {
 # 3. GCS Bucket for Persistent Data
 # ==========================================
 resource "random_id" "bucket_suffix" {
-  byte_length = 4
+  byte_length = 14
 }
 
 resource "google_storage_bucket" "atlantis_data" {
@@ -76,10 +76,6 @@ resource "google_cloud_run_v2_service" "atlantis" {
         value = var.github_repo_allowlist
       }
       env {
-        name  = "ATLANTIS_DATA_DIR"
-        value = "/mnt/atlantis-data"
-      }
-      env {
         name  = "ATLANTIS_PORT"
         value = "8080"
       }
@@ -98,19 +94,10 @@ resource "google_cloud_run_v2_service" "atlantis" {
         container_port = 8080
       }
 
-      volume_mounts {
-        name       = "atlantis-storage"
-        mount_path = "/mnt/atlantis-data"
-      }
+
     }
 
-    volumes {
-      name = "atlantis-storage"
-      gcs {
-        bucket    = google_storage_bucket.atlantis_data.name
-        read_only = false
-      }
-    }
+
   }
 }
 
