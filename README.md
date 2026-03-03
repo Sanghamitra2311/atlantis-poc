@@ -74,3 +74,22 @@ Atlantis is a self-hosted application that listens for Terraform pull request ev
   Atlantis in Action:
   <img width="1287" height="813" alt="image" src="https://github.com/user-attachments/assets/97d09c82-11af-4c4f-9fe0-ff04c9a6e00f" />
 
+  # Terragrunt
+
+-  When we start migrating our services from AWS to GCP, we are going to be building a lot of identical infrastructure across different environments (e.g., a Dev VPC, a QA VPC, and a Prod VPC).
+
+-  If we just use plain Terraform, you end up copying and pasting the exact same main.tf, variables.tf, and providers.tf files into three different folders. If we later decide to change a firewall rule, we have to manually update it in all three places. It becomes a maintenance nightmare.
+
+-  Terragrunt acts as a wrapper to keep our code DRY (Don't Repeat Yourself). Instead of copying the code, us write the Terraform module exactly once. Then, we use tiny terragrunt.hcl files in our environment folders to simply pass in different variables (like environment = "dev" or environment = "prod").
+
+-  When we type "terragrunt plan", Terragrunt temporarily copies your central module, injects your specific dev or prod variables, runs terraform plan on your behalf, and outputs the result.
+
+## Project Structure 
+atlantis-poc/
+├── modules/
+│   └── app_infrastructure/
+├── environments/
+│   ├── dev/
+│   └── prod/
+├── atlantis.yaml
+└── .gitignore
