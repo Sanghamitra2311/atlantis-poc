@@ -85,11 +85,6 @@ Atlantis is a self-hosted application that listens for Terraform pull request ev
 -  When we type "terragrunt plan", Terragrunt temporarily copies your central module, injects your specific dev or prod variables, runs terraform plan on your behalf, and outputs the result.
 
 ## Project Structure 
-atlantis-poc/
-├── modules/
-│   └── app_infrastructure/
-├── environments/
-│   ├── dev/
-│   └── prod/
-├── atlantis.yaml
-└── .gitignore
+
+<img width="333" height="232" alt="image" src="https://github.com/user-attachments/assets/5aeaf027-fbd2-4dfa-ac87-24d14c3205ba" />
+
