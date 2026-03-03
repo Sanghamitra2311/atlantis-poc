@@ -63,3 +63,14 @@ Atlantis is a self-hosted application that listens for Terraform pull request ev
 - [Atlantis Documentation](https://www.runatlantis.io/docs/)
 - [Terraform Documentation](https://www.terraform.io/docs/)
 - [GCP Cloud Run](https://cloud.google.com/run)
+
+  ## Snapshots:
+  Cloud Run Deployment with Atlantis Server
+  <img width="1904" height="835" alt="image" src="https://github.com/user-attachments/assets/64c1eb40-11ad-4fe6-a263-7f892f2fad91" />
+
+  Atlantis Webhook in Github:
+  <img width="1469" height="728" alt="image" src="https://github.com/user-attachments/assets/c996b041-beef-40ce-a51e-6690967e248b" />
+
+  Atlantis in Action:
+  <img width="1287" height="813" alt="image" src="https://github.com/user-attachments/assets/97d09c82-11af-4c4f-9fe0-ff04c9a6e00f" />
+
