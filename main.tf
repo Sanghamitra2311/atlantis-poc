@@ -41,7 +41,7 @@ resource "google_project_iam_member" "atlantis_admin" {
 # 3. GCS Bucket for Persistent Data
 # ==========================================
 resource "random_id" "bucket_suffix" {
-  byte_length = 4
+  byte_length = 14
 }
 
 resource "google_storage_bucket" "atlantis_data" {
